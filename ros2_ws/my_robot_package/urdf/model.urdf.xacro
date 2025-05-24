@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="converted_robot">
+  <xacro:arg name="prefix" default=""/>
+
+  <link name="$(arg prefix)base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 -3.14"/>
+      <geometry>
+        <mesh filename="package://my_robot_package/meshes/chassis.dae"/>
+        <scale value=".4 .4 .4"/>
+      </geometry>
+    </visual>
+    <collision name="base_link_collision">
+      <origin xyz= "0 0 0.12" rpy="0 0 0"/>
+        <geometry> <!-- 0.39496000000000003 0.22836 0.020000000000000004-->
+          <box size=".3949 0.22836 0.02"/>
+        </geometry>
+    </collision>
+  </link>
+
+  <link name="$(arg prefix)front_left_wheel_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot_package/meshes/wheel.dae"/>
+      </geometry>
+    </visual>
+    <collision name="front_left_wheel_collision">
+      <origin xyz="0 0 0" rpy="-1.57 0 0"/>
+      <geometry>
+        <cylinder length="0.0457" radius="0.06604"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="$(arg prefix)front_right_wheel_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot_package/meshes/wheel.dae"/> 
+        <!--<mesh filename="/home/gio2/Robotics/freshStart/ros2_ws/src/my_robot_package/meshes/wheel.dae"/>-->
+      </geometry>
+    </visual>
+    <collision name="front_right_wheel_collision">
+      <origin xyz="0 0 0" rpy="-1.57 0 0"/>
+      <geometry>
+        <cylinder length="0.0457" radius="0.06604"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="$(arg prefix)rear_left_wheel_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot_package/meshes/wheel.dae"/>
+      </geometry>
+    </visual>
+    <collision name="rear_left_wheel_collision">
+      <origin xyz="0 0 0" rpy="-1.57 0 0"/>
+      <geometry>
+        <cylinder length="0.0457" radius="0.06604"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <link name="$(arg prefix)rear_right_wheel_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://my_robot_package/meshes/wheel.dae"/>
+      </geometry>
+    </visual>
+    <collision name="rear_right_wheel_collision">
+      <origin xyz="0 0 0" rpy="-1.57 0 0"/>
+      <geometry>
+        <cylinder length="0.0457" radius="0.06604"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <!-- <link name="front_left_steering_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.0001" radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision name="front_left_steering_link_collision">
+      <geometry>
+        <cylinder length="0.0001" radius="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+    <link name="front_right_steering_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.0001" radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision name="front_right_steering_link_collision">
+      <geometry>
+        <cylinder length="0.0001" radius="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="front_left_steering_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="front_left_steering_link"/>
+    <axis xyz=" 0 0 1"/>
+  </joint>
+
+  <joint name="front_right_steering_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="front_right_steering_link"/>
+    <axis xyz=" 0 0 1"/>
+  </joint> -->
+
+  <joint name="$(arg prefix)front_left_wheel_joint" type="continuous">
+    <parent link="$(arg prefix)base_link"/>
+    <child link="$(arg prefix)front_left_wheel_link"/>
+    <origin xyz="0.256 0.2854 0.03282" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="$(arg prefix)front_right_wheel_joint" type="continuous">
+    <parent link="$(arg prefix)base_link"/>
+    <child link="$(arg prefix)front_right_wheel_link"/>
+    <origin xyz="0.256 -0.2854 0.03282" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="$(arg prefix)rear_left_wheel_joint" type="continuous">
+    <parent link="$(arg prefix)base_link"/>
+    <child link="$(arg prefix)rear_left_wheel_link"/>
+    <origin xyz="-0.256 0.2854 0.03282" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="$(arg prefix)rear_right_wheel_joint" type="continuous">
+    <parent link="$(arg prefix)base_link"/>
+    <child link="$(arg prefix)rear_right_wheel_link"/>
+    <origin xyz="-0.256 -0.2854 0.03282" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+</robot>

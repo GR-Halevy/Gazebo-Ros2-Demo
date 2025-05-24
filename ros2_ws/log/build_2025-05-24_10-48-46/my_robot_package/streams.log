@@ -1,0 +1,51 @@
+[0.846s] Invoking command in '/home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/my_robot_package': PYTHONPATH=/home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/my_robot_package build --build-base /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build install --record /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/install.log --single-version-externally-managed install_data
+[1.003s] running egg_info
+[1.014s] writing ../build/my_robot_package/my_robot_package.egg-info/PKG-INFO
+[1.014s] writing dependency_links to ../build/my_robot_package/my_robot_package.egg-info/dependency_links.txt
+[1.014s] writing entry points to ../build/my_robot_package/my_robot_package.egg-info/entry_points.txt
+[1.014s] writing requirements to ../build/my_robot_package/my_robot_package.egg-info/requires.txt
+[1.014s] writing top-level names to ../build/my_robot_package/my_robot_package.egg-info/top_level.txt
+[1.037s] reading manifest file '../build/my_robot_package/my_robot_package.egg-info/SOURCES.txt'
+[1.039s] writing manifest file '../build/my_robot_package/my_robot_package.egg-info/SOURCES.txt'
+[1.039s] running build
+[1.039s] running build_py
+[1.039s] copying my_robot_package/map_merger_old.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package
+[1.039s] copying my_robot_package/__init__.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package
+[1.039s] copying my_robot_package/map_merger.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package
+[1.040s] copying my_robot_package/path_follower.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package
+[1.040s] copying my_robot_package/tf_publisher.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package
+[1.040s] copying my_robot_package/path_creator.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package
+[1.040s] running install
+[1.043s] running install_lib
+[1.054s] copying /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package/map_merger_old.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package
+[1.054s] copying /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package/__init__.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package
+[1.054s] copying /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package/map_merger.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package
+[1.054s] copying /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package/path_follower.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package
+[1.054s] copying /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package/tf_publisher.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package
+[1.055s] copying /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package/path_creator.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package
+[1.055s] byte-compiling /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/map_merger_old.py to map_merger_old.cpython-312.pyc
+[1.056s] byte-compiling /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/__init__.py to __init__.cpython-312.pyc
+[1.056s] byte-compiling /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/map_merger.py to map_merger.cpython-312.pyc
+[1.057s] byte-compiling /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/path_follower.py to path_follower.cpython-312.pyc
+[1.058s] byte-compiling /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/tf_publisher.py to tf_publisher.cpython-312.pyc
+[1.058s] byte-compiling /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/path_creator.py to path_creator.cpython-312.pyc
+[1.059s] running install_data
+[1.059s] creating /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/launch
+[1.059s] copying launch/my_launch_file.launch.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/launch
+[1.060s] copying launch/online_async_launch1.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/launch
+[1.060s] copying launch/online_async_launch2.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/launch
+[1.060s] creating /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/config
+[1.061s] copying config/mapper_params_online_async1.yaml -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/config
+[1.061s] copying config/mapper_params_online_async2.yaml -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/config
+[1.061s] creating /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/meshes
+[1.061s] copying meshes/chassis.dae -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/meshes
+[1.063s] copying meshes/wheel.dae -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/meshes
+[1.067s] running install_egg_info
+[1.078s] removing '/home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package-0.0.0-py3.12.egg-info' (and everything under it)
+[1.078s] Copying ../build/my_robot_package/my_robot_package.egg-info to /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package-0.0.0-py3.12.egg-info
+[1.080s] running install_scripts
+[1.151s] Installing map_merger script to /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/my_robot_package
+[1.153s] Installing path_follower script to /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/my_robot_package
+[1.153s] Installing tf_publisher script to /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/my_robot_package
+[1.153s] writing list of installed files to '/home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/install.log'
+[1.177s] Invoked command in '/home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/my_robot_package' returned '0': PYTHONPATH=/home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/my_robot_package build --build-base /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build install --record /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/install.log --single-version-externally-managed install_data

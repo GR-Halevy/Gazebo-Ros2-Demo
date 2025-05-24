@@ -1,0 +1,49 @@
+running egg_info
+writing ../build/my_robot_package/my_robot_package.egg-info/PKG-INFO
+writing dependency_links to ../build/my_robot_package/my_robot_package.egg-info/dependency_links.txt
+writing entry points to ../build/my_robot_package/my_robot_package.egg-info/entry_points.txt
+writing requirements to ../build/my_robot_package/my_robot_package.egg-info/requires.txt
+writing top-level names to ../build/my_robot_package/my_robot_package.egg-info/top_level.txt
+reading manifest file '../build/my_robot_package/my_robot_package.egg-info/SOURCES.txt'
+writing manifest file '../build/my_robot_package/my_robot_package.egg-info/SOURCES.txt'
+running build
+running build_py
+copying my_robot_package/map_merger_old.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package
+copying my_robot_package/__init__.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package
+copying my_robot_package/map_merger.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package
+copying my_robot_package/path_follower.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package
+copying my_robot_package/tf_publisher.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package
+copying my_robot_package/path_creator.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package
+running install
+running install_lib
+copying /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package/map_merger_old.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package
+copying /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package/__init__.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package
+copying /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package/map_merger.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package
+copying /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package/path_follower.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package
+copying /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package/tf_publisher.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package
+copying /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/build/lib/my_robot_package/path_creator.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package
+byte-compiling /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/map_merger_old.py to map_merger_old.cpython-312.pyc
+byte-compiling /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/map_merger.py to map_merger.cpython-312.pyc
+byte-compiling /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/path_follower.py to path_follower.cpython-312.pyc
+byte-compiling /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/tf_publisher.py to tf_publisher.cpython-312.pyc
+byte-compiling /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package/path_creator.py to path_creator.cpython-312.pyc
+running install_data
+creating /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/launch
+copying launch/my_launch_file.launch.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/launch
+copying launch/online_async_launch1.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/launch
+copying launch/online_async_launch2.py -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/launch
+creating /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/config
+copying config/mapper_params_online_async1.yaml -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/config
+copying config/mapper_params_online_async2.yaml -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/config
+creating /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/meshes
+copying meshes/chassis.dae -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/meshes
+copying meshes/wheel.dae -> /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/share/my_robot_package/meshes
+running install_egg_info
+removing '/home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../build/my_robot_package/my_robot_package.egg-info to /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/python3.12/site-packages/my_robot_package-0.0.0-py3.12.egg-info
+running install_scripts
+Installing map_merger script to /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/my_robot_package
+Installing path_follower script to /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/my_robot_package
+Installing tf_publisher script to /home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/install/my_robot_package/lib/my_robot_package
+writing list of installed files to '/home/gio2/Robotics/freshStart/Gazebo-Ros2-Demo/ros2_ws/build/my_robot_package/install.log'
