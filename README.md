@@ -11,6 +11,18 @@
 
 ---
 
+### 1.1 Recommended to add to bashrc
+```bash
+# Sourcing ROS2 environment
+source /opt/ros/jazzy/setup.bash
+
+# Using GPU rendering
+export MESA_D3D12_DEFAULT_ADAPTER_NAME=NVIDIA
+
+# Model directory, gazebo will look here for model references in .sdf (references like this: <uri>model://X1_S/</uri>)
+export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:/path/to/your/models/
+```
+---
 ### 2. Install Gazebo Harmonic
 
 Follow instructions from the official [Gazebo Harmonic installation guide](https://gazebosim.org/docs/harmonic/install_ubuntu/), or use the steps below:
