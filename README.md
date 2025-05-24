@@ -1,9 +1,13 @@
 # Gazebo-ROS2 Demo
 
+I used the X1 car model and the harmonic world from gazebo fuel:
+https://app.gazebosim.org/fuel/models
 
 ## Installation Guide
+I reinstalled with a clean install of Ubuntu 24.04, and created these minimal steps below. This installation should be sufficient to run the code in this repo.
 
 ### 1. Recommended Environment
+I used the following combination as is recommend on gazebo website:
 
 * **ROS 2:** Jazzy
 * **Gazebo:** Harmonic (LTS)
@@ -12,6 +16,7 @@
 ---
 
 ### 1.1 Recommended to add to bashrc
+Adding this for convience to bashrc, so you dont forget this set this up at every launch. Note that you need to change the path to the (car) model location in the last command here.
 ```bash
 # Sourcing ROS2 environment
 source /opt/ros/jazzy/setup.bash
@@ -24,7 +29,8 @@ export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:/path/to/your/models/
 ```
 ---
 ## 2. Code dependencies
-Rest of the code depencies are incorporated in other installs, e.g. numpy
+These two need to be installed manually, the rest of the code depencies are incorporated in other installs. I believe it only used numpy as additional dependency.
+
 ```bash
 sudo apt install ros-jazzy-slam-toolbox
 pip install transforms3d
@@ -99,14 +105,14 @@ Official guide: [ROS-Gazebo Integration](https://gazebosim.org/docs/harmonic/ros
 ## 6. What the code does:
 The code currently uses the ground truth poses, obtained with a plugin, from gazebo (bridged to ROS2) to send movement commands to both robots to drive towards waypoint lists. Likely, odometry could have been used as well but I didnt want to deal with odometry inaccuracies for creating a fixed path for the robots to travel.
 
-
-The waypoint files were created with path_creator.py, however this file is not being compiled. So if you want to create a different waypoint file, you need to run the path_creator.py. I recommend to just comment out the path_follower code (and maybe the slam_toolbox too) in the launch file and drive around yourself while having the path_creator.py runnning in another terminal. This way you can reuse the bridges that are running in the launch file. Since it bridges some information required for path_creator, like /clock.  
-
-Driving the robot manually also requires changing the topic the robot listens to. (from default /model/X1_{ID: 1 or 2}/cmd_vel to whatever the keyboard control is posting to, default /model/X1/cmd_vel in harmonic.sdf)
-
 During the drive the lidar data is being bridged to ROS2, with 2 slam_toolbox instances listening on /scan1 and /scan2. They take in that data along with odometry and a base_frame tf's. The exact configs can be seen in ros2_ws/my_robot_package/config/. These are copies of default .yaml files with some adjustments to the ROS Parameters. 
 
 Both of the maps generated are posted, under map1 and map2 respectively. Then there is another node called map_merger that listens to both and creates a merged map, it does this creating a map that should fit both, and then adding map1 first followed by map2's data wherever there is holes. This is only possible because we know the starting location of both robots, and because there starting 'angle' is the same.
+
+## Creating own waypoint files
+The waypoint files were created with path_creator.py, however this file is not being compiled. So if you want to create a different waypoint file, you need to run the path_creator.py. I recommend to just comment out the path_follower code (and maybe the slam_toolbox too) in the launch file and drive around yourself while having the path_creator.py runnning in another terminal. This way you can reuse the bridges that are running in the launch file. Since it bridges some information required for path_creator, like /clock.  
+
+Driving the robot manually also requires changing the topic the robot listens to. (from default /model/X1_{ID: 1 or 2}/cmd_vel to whatever the keyboard control is posting to, default /model/X1/cmd_vel in harmonic.sdf)
 
 
 ## Running the code

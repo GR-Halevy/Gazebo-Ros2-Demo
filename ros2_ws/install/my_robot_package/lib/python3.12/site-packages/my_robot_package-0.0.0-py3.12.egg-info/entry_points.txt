@@ -1,4 +1,0 @@
-[console_scripts]
-map_merger = my_robot_package.map_merger:main
-path_follower = my_robot_package.path_follower:main
-tf_publisher = my_robot_package.tf_publisher:main

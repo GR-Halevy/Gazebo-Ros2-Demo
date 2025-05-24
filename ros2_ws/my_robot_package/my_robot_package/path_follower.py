@@ -132,7 +132,7 @@ class PathFollower(Node):
         angle_diff = atan2(sin(angle_to_goal - self.yaw), cos(angle_to_goal - self.yaw))
 
         cmd = Twist()
-        K_linear = .8 #1.3
+        K_linear = 1.5 #1.3
         K_angular = 1.5
 
         cmd.linear.x = K_linear * distance
