@@ -3,9 +3,13 @@
 I used the X1 car model and the harmonic world from gazebo fuel:
 https://app.gazebosim.org/fuel/models
 
-<img src="robot1.png" alt="Robot1" width="300"/>
-<img src="robot2.png" alt="Robot2" width="320"/>
-<img src="robotmerged.png" alt="Combined" width="650"/>
+<div style="display: flex; gap: 10px;">
+  <img src="robot1.png" alt="Robot1" width="250"/>
+  <img src="robot2.png" alt="Robot2" width="268"/>
+</div>
+
+<img src="robotmerged.png" alt="Combined" width="522"/>
+
 
 ## Installation Guide
 I reinstalled with a clean install of Ubuntu 24.04, and created these minimal steps below. This installation should be sufficient to run the code in this repo.
