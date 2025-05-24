@@ -17,7 +17,7 @@ class MergeMapNode(Node):
     def merge_maps(self, map1, map2):
 
         if self.map1 is None or self.map2 is None:
-            self.get_logger().info('Waiting for both maps to be available')
+            #self.get_logger().info('Waiting for both maps to be available')
             return None
         
 
@@ -78,7 +78,7 @@ class MergeMapNode(Node):
                     merged_map.data[mi] = map2.data[i]
 
             self.publisher.publish(merged_map)
-            self.get_logger().info('Merged map published')
+            #self.get_logger().info('Merged map published')
 
     def map1_callback(self, msg):
         self.map1 = msg

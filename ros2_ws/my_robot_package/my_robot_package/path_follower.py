@@ -124,7 +124,7 @@ class PathFollower(Node):
             # self.get_logger().info(f"Reached waypoint {self.current_waypoint_index}, with distance {distance}")
             # self.get_logger().info(f"Current position: {self.position.x}, {self.position.y}")
             # self.get_logger().info(f"Waypoint: {goal_x}, {goal_y}")
-            self.get_logger().info(f"Robot: {self.robot_name}, Reached waypoint {self.current_waypoint_index}, with distance {distance}")
+            #self.get_logger().info(f"Robot: {self.robot_name}, Reached waypoint {self.current_waypoint_index}, with distance {distance}")
             self.current_waypoint_index += 1
             return
 
@@ -142,7 +142,7 @@ class PathFollower(Node):
         cmd.angular.z = min(cmd.angular.z, 1.0)
 
         self.publisher.publish(cmd)
-        self.get_logger().info(f"Publishing cmd: {cmd.linear.x}, {cmd.angular.z}")
+        #self.get_logger().info(f"Publishing cmd: {cmd.linear.x}, {cmd.angular.z}")
 
 def main(args=None):
     rclpy.init(args=args)

@@ -23,7 +23,14 @@ export MESA_D3D12_DEFAULT_ADAPTER_NAME=NVIDIA
 export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:/path/to/your/models/
 ```
 ---
-### 2. Install Gazebo Harmonic
+## 2. Code dependencies
+Rest of the code depencies are incorporated in other installs, e.g. numpy
+```bash
+sudo apt install ros-jazzy-slam-toolbox
+pip install transforms3d
+```
+
+### 3. Install Gazebo Harmonic
 
 Follow instructions from the official [Gazebo Harmonic installation guide](https://gazebosim.org/docs/harmonic/install_ubuntu/), or use the steps below:
 
@@ -38,20 +45,6 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-
 sudo apt-get update
 sudo apt-get install gz-harmonic
 ```
-
----
-
-### 3. Install `ros-gz` Packages
-Where ${ROS_DISTRO} is recommended to be 'jazzy'
-```bash
-echo ${ROS_DISTRO}
-jazzy
-```
-```bash
-sudo apt-get install ros-${ROS_DISTRO}-ros-gz
-```
-
-Official guide: [ROS-Gazebo Integration](https://gazebosim.org/docs/harmonic/ros_installation/)
 
 ---
 
@@ -87,9 +80,90 @@ sudo apt install ros-jazzy-desktop
 
 ---
 
-## Additional useful Resources
+### 5. Install `ros-gz` Packages
+Where ${ROS_DISTRO} is recommended to be 'jazzy'
+```bash
+echo ${ROS_DISTRO}
+jazzy
+```
+For this combination of Ubuntu 24.04, ROS2 Jazzy, Gazebo Harmonic (LTS). It is rather straight forward.
+```bash
+sudo apt-get install ros-${ROS_DISTRO}-ros-gz
+```
 
-* Gazebo Plugins & API: [https://gazebosim.org/api/sim/9/index.html](https://gazebosim.org/api/sim/9/index.html)
-* SDF Format Documentation: [http://sdformat.org/spec](http://sdformat.org/spec)
+Official guide: [ROS-Gazebo Integration](https://gazebosim.org/docs/harmonic/ros_installation/)
 
 ---
+
+
+## 6. What the code does:
+The code currently uses the ground truth poses, obtained with a plugin, from gazebo (bridged to ROS2) to send movement commands to both robots to drive towards waypoint lists. Likely, odometry could have been used as well but I didnt want to deal with odometry inaccuracies for creating a fixed path for the robots to travel.
+
+
+The waypoint files were created with path_creator.py, however this file is not being compiled. So if you want to create a different waypoint file, you need to run the path_creator.py. I recommend to just comment out the path_follower code (and maybe the slam_toolbox too) in the launch file and drive around yourself while having the path_creator.py runnning in another terminal. This way you can reuse the bridges that are running in the launch file. Since it bridges some information required for path_creator, like /clock.  
+
+Driving the robot manually also requires changing the topic the robot listens to. (from default /model/X1_{ID: 1 or 2}/cmd_vel to whatever the keyboard control is posting to, default /model/X1/cmd_vel in harmonic.sdf)
+
+During the drive the lidar data is being bridged to ROS2, with 2 slam_toolbox instances listening on /scan1 and /scan2. They take in that data along with odometry and a base_frame tf's. The exact configs can be seen in ros2_ws/my_robot_package/config/. These are copies of default .yaml files with some adjustments to the ROS Parameters. 
+
+Both of the maps generated are posted, under map1 and map2 respectively. Then there is another node called map_merger that listens to both and creates a merged map, it does this creating a map that should fit both, and then adding map1 first followed by map2's data wherever there is holes. This is only possible because we know the starting location of both robots, and because there starting 'angle' is the same.
+
+
+## Running the code
+Navigate to ros2_ws, this will be the default directory to run everything in.
+
+Then compile the code
+```bash
+colcon build
+```
+Source the environment
+```bash
+source install/setup.bash
+```
+Run the launch file, this already contains everything that needs to be run. 
+```bash
+ros2 launch my_robot_package my_launch_file.launch.py
+```
+The only thing to add is Rviz2 windows. This could also be added to the launch file, but I prefer to launch them myself.
+
+First sourcing the environment again, this is mostly for the meshes I believe. And the config below can be replaced with different .rviz files, such as Robot2 or CombinedNew.rviz. Note, this should be run from ros2_ws.
+```bash
+source install/setup.bash
+rviz2 -d Robot1.rviz
+```
+
+
+## Additional useful Resources
+* Gazebo tutorial and some ROS2 interopability: [https://gazebosim.org/docs/harmonic/building_robot](https://gazebosim.org/docs/harmonic/building_robot)
+* Gazebo Plugins & API: [https://gazebosim.org/api/sim/9/index.html](https://gazebosim.org/api/sim/9/index.html)
+* SDF Format Documentation: [http://sdformat.org/spec](http://sdformat.org/spec)
+* Gazebo bridge message types: [https://github.com/gazebosim/ros_gz/blob/jazzy/ros_gz_bridge/README.md](https://github.com/gazebosim/ros_gz/blob/jazzy/ros_gz_bridge/README.md)
+* Information about SLAM_TOOLBOX: [https://docs.ros.org/en/humble/p/slam_toolbox/](https://docs.ros.org/en/humble/p/slam_toolbox/)
+* Gazebo model worlds and robots: [https://app.gazebosim.org/fuel/models](https://app.gazebosim.org/fuel/models)
+---
+
+## Useful commands
+
+For debugging tf frames, this can be used to see if any frames are unconnected.
+```bash
+ros2 run tf2_tools view_frames
+```
+![alt text](tf_tree.png)
+
+ROS2 nodes can be left as zombie processes, specifically when they crash and are not closed properly. If you notice unexpected behaviour you can check for this with
+```bash
+ros2 node list
+```
+This will list all running ros2 nodes. And you can kill any processes that shouldnt be there.
+
+And some more commands to help with bridge debugging. Topic list for showing the available topics, you can also echo them to listen in and see what is being posted. I recommend using this in combination with 'grep -C 5' or something similar since it posts fast and alot.
+Then finally you can list topic info to see how many publishers and listeners there are on a topic.
+```bash
+gz topic -l
+gz topic -e -t /topic/to/listen/to
+gz topic info -t /topic/to/list/info/of
+
+ros2 topic list
+ros2 topic echo /topic/to/listen/to
+ros2 topic info /topic/to/list/info/of
+```
